@@ -1,4 +1,4 @@
-const MAKE_WEBHOOK_URL = "https://hook.eu2.make.com/vjpqoop0c792pjxw3d4deyfo52ecs21s";
+const MAKE_WEBHOOK_URL = "https://mynina-baze-webhook.marketing-03f.workers.dev";
 const DEFAULT_BAZE_URL = "https://www.safaricom.co.ke/personal/value-added-services/entertainment/baze";
 
 function initReveal() {
