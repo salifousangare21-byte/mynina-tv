@@ -411,7 +411,7 @@
                     utm_medium: sessionStorage.getItem('utm_medium') || '',
                     utm_campaign: sessionStorage.getItem('utm_campaign') || ''
                 };
-                const res = await fetch('https://hook.eu2.make.com/saiuaxf3ay6q9i6njco4cq714j7ao9uu', {
+                const res = await fetch('https://mynina-signup-webhook.marketing-03f.workers.dev', {
                     method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
                 });
                 if (!res.ok) {
