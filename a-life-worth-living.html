@@ -5,25 +5,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>A Life Worth Living | MyNina on Baze Kenya</title>
-  <meta name="description"
-    content="Warm emotional drama for viewers who respond to hope, family and life-changing turns.">
+  <meta name="description" content="Warm emotional drama for viewers who respond to hope, family and life-changing turns.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/Icone MyNina.png">
+  <link rel="apple-touch-icon" href="./assets/Icone MyNina.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="./styles.css">
-  <!-- Custom specific overrides for the Series Page to make it ultra premium -->
   <style>
-    .hero {
-      min-height: 60vh;
-      max-height: 800px;
-    }
-
-    /* Make the video more visible */
-    .hero-overlay {
-      background: linear-gradient(180deg, rgba(9, 5, 16, 0.1) 0%, rgba(9, 5, 16, 0.8) 100%) !important;
-    }
-
+    .hero { min-height: 60vh; max-height: 800px; }
+    .hero-overlay { background: linear-gradient(180deg, rgba(9, 5, 16, 0.1) 0%, rgba(9, 5, 16, 0.8) 100%) !important; }
     .series-hero-title {
       font-size: clamp(3.5rem, 10vw, 8.5rem);
       font-weight: 900;
@@ -35,41 +28,31 @@
       -webkit-text-fill-color: transparent;
       text-transform: uppercase;
     }
-
-    .synopsis-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 48px;
-    }
-
-    @media(min-width: 800px) {
-      .synopsis-grid {
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: 80px;
-      }
-    }
-
-    .synopsis-img {
+    .form-select {
       width: 100%;
-      border-radius: var(--radius-xl);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-      aspect-ratio: 4/5;
-      object-fit: cover;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1rem;
+      font-family: inherit;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23ffffff' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
     }
-
-    .synopsis-content h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 2.8rem;
-      margin-bottom: 24px;
-      line-height: 1.2;
-    }
-
-    .synopsis-content p {
-      font-size: 1.15rem;
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.8;
-      margin-bottom: 20px;
+    .form-select option { background: #1e0c21; color: #fff; }
+    .form-select:focus { outline: none; border-color: rgba(255,22,93,0.5); }
+    .form-label {
+      display: block;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      text-align: left;
     }
   </style>
   <!-- Google Tag Manager -->
@@ -86,34 +69,32 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4LMJS5"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
   <header class="site-nav">
     <div class="container nav-inner">
-      <a class="brand" href="#"><img src="./assets/logo-mynina-white.png" alt="MyNina"
-          style="height:40px;width:auto;"></a>
+      <a class="brand" href="#"><img src="./assets/logo-mynina-white.png" alt="MyNina" style="height:40px;width:auto;"></a>
       <a class="nav-chip" href="#signup">Watch on Baze</a>
     </div>
   </header>
 
   <main class="page-shell">
+
     <!-- 1. Cinematic Hero -->
     <section class="hero">
       <div class="hero-video-wrap">
-        <iframe data-yt-hero="true" width="100%" height="100%"
+        <iframe
           style="position: absolute; top:0; left:0; pointer-events:none; border:none; width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);"
-          data-src="https://www.youtube.com/embed/3A6WOgqKOVE?autoplay=1&mute=1&controls=0&loop=1&playlist=3A6WOgqKOVE"
-          allow="autoplay; encrypted-media"></iframe>
+          src="https://player.vimeo.com/video/1186921545?h=0d5fc00357&autoplay=1&muted=1&loop=1&background=1&controls=0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen></iframe>
         <div class="hero-overlay"></div>
         <div class="hero-grid"></div>
       </div>
-      <div class="container hero-content"
-        style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+      <div class="container hero-content" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
         <div class="reveal">
-          <div class="eyebrow" style="margin: 0 auto 20px;"><span class="eyebrow-dot"></span> Drama • Romance • Second
-            Chances</div>
+          <div class="eyebrow" style="margin: 0 auto 20px;"><span class="eyebrow-dot"></span> Drama • Romance • Second Chances</div>
           <h1 class="hero-title series-hero-title">A Life Worth Living</h1>
-          <p class="hero-sub" style="max-width: 600px; margin: 0 auto 40px;">A frightening diagnosis, a mistaken result
-            and a second chance that opens new love and new purpose. This page speaks to viewers who want a heartfelt
-            story with hope inside it.</p>
+          <p class="hero-sub" style="max-width: 600px; margin: 0 auto 40px;">A frightening diagnosis, a mistaken result and a second chance that opens new love and new purpose. This page speaks to viewers who want a heartfelt story with hope inside it.</p>
           <div class="hero-actions" style="justify-content: center;">
             <a class="btn-secondary" href="#signup">Unlock All Episodes Now</a>
           </div>
@@ -121,23 +102,26 @@
       </div>
     </section>
 
-    <!-- 3. Dedicated Trailer Theater (Moved Up) -->
+    <!-- 2. Trailer Section -->
     <section class="section" id="trailer">
       <div class="container">
         <div class="section-head reveal" style="text-align: center; margin: 0 auto 36px; width: 100%;">
           <div class="section-tag" style="display: inline-block; margin-bottom: 12px;">Full Episode 1</div>
           <h2 class="section-title" style="margin: 0; text-align: center;">Dive into the Drama.<br>Watch the <em>First Episode</em> below.</h2>
         </div>
-        <div class="reveal"
-          style="max-width: 900px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.6); background: #000;">
+        <div class="reveal" style="max-width: 900px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.6); background: #000; position: relative;">
           <div class="custom-video-poster" style="position: absolute; top:0; left:0; width:100%; height:100%; background-image: url('./assets/a-life-worth-living.jpg'); background-size: cover; background-position: top center; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center;">
-           <div class="play-button" style="width: 80px; height: 80px; background: rgba(255, 22, 93, 0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: transform 0.2s; box-shadow: 0 10px 40px rgba(255, 22, 93, 0.5);" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">
+            <div class="play-button" style="width: 80px; height: 80px; background: rgba(255, 22, 93, 0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: transform 0.2s; box-shadow: 0 10px 40px rgba(255, 22, 93, 0.5);" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">
               <svg width="36" height="36" viewBox="0 0 24 24" fill="white" style="margin-left:5px;"><path d="M8 5v14l11-7z"/></svg>
-           </div>
-        </div>
-          <iframe data-yt-lead="true" data-yt-target="signup" width="100%"
+            </div>
+          </div>
+          <iframe
+            data-vimeo-lead="true"
+            data-vimeo-target="signup"
+            src="https://player.vimeo.com/video/1186921545?h=0d5fc00357&color=ff165d&title=0&byline=0&portrait=0"
+            width="100%"
             style="aspect-ratio: 16/9; display: block; border: none;"
-            src="https://www.youtube.com/embed/3A6WOgqKOVE?enablejsapi=1&rel=0" allow="autoplay; encrypted-media"
+            allow="autoplay; fullscreen; picture-in-picture"
             allowfullscreen></iframe>
         </div>
         <div class="hero-actions reveal" style="justify-content: center; margin-top: 32px;">
@@ -146,29 +130,42 @@
       </div>
     </section>
 
-    <!-- 2. The Hook / Storyline (Moved Down) -->
-    
-
-    <!-- 4. Lead Form Section -->
+    <!-- 3. Lead Form Section -->
     <section class="section" id="signup">
       <div class="container">
-        <div class="cta-panel reveal"
-          style="grid-template-columns: 1fr; align-items: center; text-align: center; max-width: 800px; margin: 0 auto; padding: 48px 32px;">
+        <div class="cta-panel reveal" style="grid-template-columns: 1fr; align-items: center; text-align: center; max-width: 800px; margin: 0 auto; padding: 48px 32px;">
           <div style="margin-bottom: 32px;">
             <div class="section-tag">Unlock All Episodes Now</div>
             <h3 style="margin-bottom: 20px;">Ready to start your <em>dramatic journey</em>?</h3>
-            <p style="margin-bottom: 0;">Leave your details below and we will redirect you instantly to Baze Kenya to
-              start watching A Life Worth Living.</p>
+            <p style="margin-bottom: 0;">Leave your details below and we will redirect you instantly to Baze Kenya to start watching A Life Worth Living.</p>
           </div>
-          <form data-lead-form data-baze-url="https://www.baze.co.ke/en/search?q=A+Life+Worth+Living&modal=true&type=series&id=795" class="lead-form" data-series="A Life Worth Living"
-            data-source="mynina-kenya-a-life-worth-living" data-campaign="mynina-kenya-launch"
+          <form data-lead-form
+            data-baze-url="https://www.baze.co.ke/en/search?q=A+Life+Worth+Living&modal=true&type=series&id=795"
+            class="lead-form"
+            data-series="A Life Worth Living"
+            data-source="mynina-kenya-a-life-worth-living"
+            data-campaign="mynina-kenya-launch"
             style="display: grid; gap: 16px; width: 100%; max-width: 480px; margin: 0 auto;">
+
             <input type="text" name="full_name" placeholder="Your Name" required class="form-input">
+
             <div class="phone-wrapper" style="position: relative; display: flex; align-items: center; width: 100%;">
-  <span style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); font-size: 1rem; color: #fff; pointer-events: none;">🇰🇪 +254</span>
-  <input type="tel" name="phone" placeholder="7XX XXX XXX" required class="form-input" style="padding-left: 95px; width: 100%; box-sizing: border-box;">
-</div>
+              <span style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); font-size: 1rem; color: #fff; pointer-events: none;">🇰🇪 +254</span>
+              <input type="tel" name="phone" placeholder="7XX XXX XXX" required class="form-input" style="padding-left: 95px; width: 100%; box-sizing: border-box;">
+            </div>
+
             <input type="email" name="email" placeholder="Email Address" required class="form-input">
+
+            <!-- Safaricom Customer Dropdown -->
+            <div>
+              <label class="form-label">Are you a Safaricom customer?</label>
+              <select name="safaricom_customer" class="form-select">
+                <option value="" disabled selected>Select an option</option>
+                <option value="Yes">Yes, I am a Safaricom customer</option>
+                <option value="No">No, I am not a Safaricom customer</option>
+              </select>
+            </div>
+
             <button type="submit" class="btn-primary" style="margin-top: 10px; width: 100%;">Watch All Episodes Now</button>
             <div data-form-status style="color: var(--pink-soft); font-size: 0.9rem; margin-top: 10px;"></div>
           </form>
@@ -180,18 +177,27 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <a class="brand" href="./index.html"><img src="./assets/logo-mynina-white.png" alt="MyNina"
-          style="height:34px;width:auto;"></a>
+      <a class="brand" href="./index.html"><img src="./assets/logo-mynina-white.png" alt="MyNina" style="height:34px;width:auto;"></a>
       <div class="footer-copy">A Life Worth Living • MyNina on Baze Kenya</div>
     </div>
   </footer>
-  <script src="./app.js"></script>
 
+  <script src="./app.js"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
   <script>
-    window.addEventListener('load', function() {
-      var heroIframe = document.querySelector('[data-yt-hero]');
-      if (heroIframe && heroIframe.dataset.src) {
-        heroIframe.src = heroIframe.dataset.src;
+    document.addEventListener('DOMContentLoaded', function() {
+      const poster = document.querySelector('.custom-video-poster');
+      const iframe = document.querySelector('[data-vimeo-lead]');
+      if (poster && iframe) {
+        const player = new Vimeo.Player(iframe);
+        poster.addEventListener('click', function() {
+          poster.style.display = 'none';
+          player.play();
+        });
+        player.on('ended', function() {
+          const signup = document.getElementById('signup');
+          if (signup) signup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
       }
     });
   </script>

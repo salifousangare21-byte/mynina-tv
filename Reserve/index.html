@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-W4LMJS5');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M19H3ESPMF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-M19H3ESPMF');
+    </script>
+
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/Icone MyNina.png">
+    <link rel="apple-touch-icon" href="assets/Icone MyNina.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MyNina — Regardez les meilleures Télénovelas 100% en français</title>
+    <meta name="description"
+        content="Découvrez MyNina, la 1ère plateforme VOD dédiée aux télénovelas. Regardez des milliers d'heures de drames et romances 100% en français sur tous vos écrans." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="style-b2c.css">
+</head>
+
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4LMJS5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- NAV -->
+    <header class="nav" role="navigation">
+        <div class="nav-inner wrap">
+            <div class="brand">
+                <a id="homeLink" href="/">
+                    <img id="navLogo" alt="MyNina Logo" src="assets/logo-mynina-white.png" class="nav-brand-logo" />
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a class="btn hide-on-mobile" id="indexCta" href="#signup">Commencer mon essai gratuit</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Intro MyNina">
+        <iframe class="hero-video" width="100%"
+            src="https://www.youtube.com/embed/OYfm0Odw8nI?autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&fs=0&loop=1&playlist=OYfm0Odw8nI"
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+        <div class="hero-content">
+            <div class="hero-left">
+                <span class="eyebrow" id="indexEyebrow">Nouveau • Essai gratuit 7 jours</span>
+                <h1 id="indexHeroTitle">
+                    <em>Savourez</em> vos dramas et romances préférés,<br />
+                    désormais disponibles sur <span class="accent">iOS</span> et <span class="accent">Android</span>.
+                </h1>
+                <p class="lead">
+                    Profitez de <span class="accent">7 JOURS OFFERTS</span> sur <span class="accent">MyNina</span> —
+                    sans engagement, résiliation simple à tout moment.
+                </p>
+                <div class="hero-cta">
+                    <a class="btn" href="#signup">Commencer mon essai gratuit</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="wrap">
+
+        <!-- SECTION 1 -->
+        <h2 class="section-title reveal section-spacing" id="indexSection1Title">Votre destination ultime pour un
+            streaming <span class="accent">illimité</span></h2>
+        <section class="banner reveal" aria-label="Votre destination ultime pour un streaming illimité">
+            <div class="ratio">
+                <picture>
+                    <source media="(max-width:768px)" srcset="assets/section1-mobile.jpg">
+                    <img src="assets/section1-desktop.jpg" alt="Streaming illimité MyNina">
+                </picture>
+            </div>
+        </section>
+        <div class="section-cta reveal">
+            <a class="btn" href="#signup">Obtenir mon essai gratuit</a>
+        </div>
+
+        <!-- SECTION 2 : Carrousel -->
+        <h2 class="section-title reveal">Actuellement disponible sur <span class="accent">MyNina</span></h2>
+        <section class="carousel reveal" aria-label="Carrousel vidéos">
+            <div class="ratio">
+                <div class="track" id="trackVid"></div>
+                <div class="ctrl">
+                    <button id="prevVid" aria-label="Précédent">‹</button>
+                    <button id="nextVid" aria-label="Suivant">›</button>
+                </div>
+                <div class="dots" id="dotsVid" aria-hidden="true"></div>
+            </div>
+        </section>
+        <div class="section-cta reveal">
+            <a class="btn" href="#signup">Commencer mon essai gratuit</a>
+        </div>
+
+        <!-- SECTION 3 -->
+        <h2 class="section-title reveal">Vos séries, partout avec <span class="accent">MyNina</span></h2>
+        <section class="banner reveal" aria-label="Votre télénovela, partout avec MyNina">
+            <div class="ratio">
+                <picture>
+                    <source media="(max-width:768px)" srcset="assets/section3-mobile.jpg">
+                    <img src="assets/section3-desktop.jpg" alt="Votre télénovela, partout avec MyNina">
+                </picture>
+            </div>
+        </section>
+
+        <!-- FORMULAIRE -->
+        <section id="signup" class="form-wrap reveal">
+            <div class="form-copy">
+                <span class="badge">🎁 <span class="accent">7 JOURS OFFERTS</span></span>
+                <div class="form-hero">
+                    <h3 class="title">Créez votre compte en remplissant le formulaire ci-contre</h3>
+                    <ul class="bullets">
+                        <li>Activation de votre compte en quelques minutes</li>
+                        <li>Résiliation simple à tout moment</li>
+                        <li>Accès sur <span class="accent">iOS</span> & <span class="accent">Android</span></li>
+                    </ul>
+                    <p class="hint">Nous n'utilisons vos infos que pour créer votre accès.</p>
+                </div>
+            </div>
+
+            <form class="form" id="leadForm" novalidate>
+                <div class="grid">
+                    <div class="field">
+                        <label class="label" for="fullName">Nom complet*</label>
+                        <input id="fullName" name="fullName" type="text" placeholder="Nom complet" required>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="email">Adresse e-mail*</label>
+                        <input id="email" name="email" type="email" placeholder="votre@email.com" required>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="country">Pays*</label>
+                        <select id="country" name="country" required></select>
+                        <small class="hint" id="dialPreview"></small>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="phone">Téléphone*</label>
+                        <input id="phone" name="phone" type="tel" placeholder="Ex: 07 00 00 00 00"
+                            inputmode="numeric" pattern="[0-9 ]*" required>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="pwd">Mot de passe*</label>
+                        <div class="pwd-wrap">
+                            <input id="pwd" name="pwd" type="password"
+                                placeholder="Mot de passe (au moins 8 caractères)" required minlength="8"
+                                autocomplete="new-password">
+                            <button type="button" class="eye-btn" data-target="pwd"
+                                aria-label="Afficher/masquer le mot de passe">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill="currentColor"
+                                        d="M12 5c-7 0-10 7-10 7s3 7 10 7 10-7 10-7-3-7-10-7zm0 12a5 5 0 110-10 5 5 0 010 10z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="pwd2">Confirmer mot de passe*</label>
+                        <div class="pwd-wrap">
+                            <input id="pwd2" name="pwd2" type="password"
+                                placeholder="Retapez exactement le même mot de passe" required minlength="8"
+                                autocomplete="new-password">
+                            <button type="button" class="eye-btn" data-target="pwd2"
+                                aria-label="Afficher/masquer la confirmation">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill="currentColor"
+                                        d="M12 5c-7 0-10 7-10 7s3 7 10 7 10-7 10-7-3-7-10-7zm0 12a5 5 0 110-10 5 5 0 010 10z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="btn" id="submitBtn" type="submit">Obtenir mon essai gratuit</button>
+                    <div id="note" class="note" aria-live="polite"></div>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer-container" role="contentinfo">
+        <div class="site-footer-inner">
+            <div class="site-footer-bottom">
+                <div class="site-footer-left">
+                    <a href="/">
+                        <img alt="MyNina Logo" src="assets/logo-mynina-white.png" class="site-footer-logo" />
+                    </a>
+                    <div class="site-footer-socials">
+                        <a href="https://cutt.ly/LANCEMENT_MYNINA_02" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="site-footer-social-link">
+                            <svg class="site-footer-social-icon" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12c0-5.523-4.477-10-10-10z" /></svg>
+                        </a>
+                        <a href="https://cutt.ly/LANCEMENT_MYNINA_03" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="site-footer-social-link">
+                            <svg class="site-footer-social-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" /></svg>
+                        </a>
+                        <a href="https://cutt.ly/LANCEMENT_MYNINA_04" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="site-footer-social-link">
+                            <svg class="site-footer-social-icon" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.06-2.88-.35-4.17-1.03-.68-.35-1.31-.83-1.87-1.39v7.1c-.04 2.76-1.55 5.27-4 6.46-2.52 1.25-5.54.9-7.7-1.04-2.11-1.89-3-4.84-2.27-7.58.74-2.75 3.12-4.78 5.92-5.07V11.5c-1.64.12-3.15.93-4.17 2.21-1.03 1.27-1.51 2.92-1.33 4.54.19 1.63 1.05 3.08 2.39 4.02 1.34.93 3.04 1.25 4.63.85 1.57-.38 2.91-1.42 3.65-2.86.73-1.43 1.02-3.08.79-4.68V.02h2.28z" /></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="site-footer-right">
+                    <a href="faq.html" class="site-footer-link">FAQ</a>
+                    <a href="cgv.html" class="site-footer-link">Conditions générales de vente</a>
+                    <a href="cgu.html" class="site-footer-link">Conditions d'utilisation</a>
+                    <a href="confidentialite.html" class="site-footer-link">Confidentialité</a>
+                    <a href="#" class="site-footer-link">Baze</a>
+                    <a id="chatBtn" class="chat-trigger site-footer-chatBtn" href="javascript:void(0)" aria-label="Ouvrir le chat">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2h3v3l4-3h9a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM6 9h12v2H6V9zm0-4h12v2H6V5zm0 8h8v2H6v-2z" /></svg>
+                        Chat
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALES -->
+    <div id="modalSuccess" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal">
+            <h3 id="modalTitle">Inscription réussie !</h3>
+            <p id="modalMessage">
+                Votre compte a été créé avec succès.<br />Vous pouvez dès maintenant télécharger l'application
+                et vous connecter avec les identifiants que vous venez de créer.
+            </p>
+            <div class="store-buttons">
+                <a href="https://cutt.ly/MyNina-Appstore" target="_blank" rel="noopener noreferrer" class="btn">▶ Google Play</a>
+                <a href="https://cutt.ly/MyNina-Appstore" target="_blank" rel="noopener noreferrer" class="btn"> App Store</a>
+            </div>
+            <div class="row">
+                <button data-close="success" class="close">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalDuplicate" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="dupTitle" aria-hidden="true">
+        <div class="modal">
+            <h3 id="dupTitle">Adresse e-mail déjà utilisée</h3>
+            <p>Vous avez déjà créé un compte avec cette adresse e-mail.<br />Ouvrez l'application MyNina et
+                utilisez <strong>"Mot de passe oublié"</strong> pour vous connecter.
+            </p>
+            <div class="row">
+                <button data-close="duplicate" class="close">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAWK.TO -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        Tawk_API.onLoad = function () {
+            if (Tawk_API.hideWidget) Tawk_API.hideWidget();
+        };
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/68762b98b00c4c190e1ca14f/1j06pkjdv';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+
+    <!-- JS principal (sans Vite) -->
+    <script>
+    const CAROUSEL_VIDEOS = [
+        { src: 'https://www.youtube.com/embed/OYfm0Odw8nI?controls=0&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&fs=0', caption: "Bande-annonce — Le Chemin de la Vérité" },
+        { src: 'https://www.youtube.com/embed/nCfsTmIwYI0?controls=0&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&fs=0', caption: "Bande-annonce — Rubi" },
+        { src: 'https://www.youtube.com/embed/wlFJSAPegxU?controls=0&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&fs=0', caption: "Bande-annonce — Precious Pearl" }
+    ];
+
+    function buildCarousel() {
+        const track = document.getElementById('trackVid');
+        const dotsWrap = document.getElementById('dotsVid');
+        const prevBtn = document.getElementById('prevVid');
+        const nextBtn = document.getElementById('nextVid');
+        if (!track || !dotsWrap) return;
+
+        CAROUSEL_VIDEOS.forEach(s => {
+            const slide = document.createElement('div'); slide.className = 'slide';
+            const iframe = document.createElement('iframe');
+            iframe.src = s.src; iframe.width = '100%'; iframe.height = '500'; iframe.frameBorder = '0'; iframe.allowFullscreen = true;
+            slide.appendChild(iframe);
+            if (s.caption) { const cap = document.createElement('div'); cap.className = 'caption'; cap.textContent = s.caption; slide.appendChild(cap); }
+            track.appendChild(slide);
+        });
+
+        const slides = Array.from(track.children);
+        let idx = 0, anim = false;
+
+        dotsWrap.innerHTML = '';
+        slides.forEach((_, i) => {
+            const d = document.createElement('span');
+            d.className = 'dot' + (i === 0 ? ' active' : '');
+            d.addEventListener('click', () => go(i));
+            dotsWrap.appendChild(d);
+        });
+
+        function update() {
+            track.style.transform = `translateX(${-idx * 100}%)`;
+            Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('active', i === idx));
+        }
+        function go(i) { if (anim) return; idx = (i + slides.length) % slides.length; anim = true; update(); setTimeout(() => anim = false, 460); }
+
+        prevBtn?.addEventListener('click', () => go(idx - 1));
+        nextBtn?.addEventListener('click', () => go(idx + 1));
+        setInterval(() => go(idx + 1), 8000);
+        update();
+    }
+
+    const io = new IntersectionObserver((entries) => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }), { threshold: 0.12 });
+
+    const countries = [
+        {"name":"Algérie","dial":"+213"},{"name":"Angola","dial":"+244"},{"name":"Bénin","dial":"+229"},
+        {"name":"Botswana","dial":"+267"},{"name":"Burkina Faso","dial":"+226"},{"name":"Burundi","dial":"+257"},
+        {"name":"Cameroun","dial":"+237"},{"name":"Cap-Vert","dial":"+238"},{"name":"Comores","dial":"+269"},
+        {"name":"Congo (RDC)","dial":"+243"},{"name":"Congo (Rép.)","dial":"+242"},{"name":"Côte d'Ivoire","dial":"+225"},
+        {"name":"Djibouti","dial":"+253"},{"name":"Égypte","dial":"+20"},{"name":"Érythrée","dial":"+291"},
+        {"name":"Éthiopie","dial":"+251"},{"name":"Gabon","dial":"+241"},{"name":"Gambie","dial":"+220"},
+        {"name":"Ghana","dial":"+233"},{"name":"Guinée","dial":"+224"},{"name":"Guinée-Bissau","dial":"+245"},
+        {"name":"Kenya","dial":"+254"},{"name":"Libéria","dial":"+231"},{"name":"Libye","dial":"+218"},
+        {"name":"Madagascar","dial":"+261"},{"name":"Malawi","dial":"+265"},{"name":"Mali","dial":"+223"},
+        {"name":"Maroc","dial":"+212"},{"name":"Maurice","dial":"+230"},{"name":"Mauritanie","dial":"+222"},
+        {"name":"Mozambique","dial":"+258"},{"name":"Namibie","dial":"+264"},{"name":"Niger","dial":"+227"},
+        {"name":"Nigeria","dial":"+234"},{"name":"Ouganda","dial":"+256"},{"name":"Rwanda","dial":"+250"},
+        {"name":"Sénégal","dial":"+221"},{"name":"Seychelles","dial":"+248"},{"name":"Sierra Leone","dial":"+232"},
+        {"name":"Somalie","dial":"+252"},{"name":"Soudan","dial":"+249"},{"name":"Soudan du Sud","dial":"+211"},
+        {"name":"Tanzanie","dial":"+255"},{"name":"Tchad","dial":"+235"},{"name":"Togo","dial":"+228"},
+        {"name":"Tunisie","dial":"+216"},{"name":"Zambie","dial":"+260"},{"name":"Zimbabwe","dial":"+263"},
+        {"name":"Guadeloupe (DOM)","dial":"+590"},{"name":"Guyane française (DOM)","dial":"+594"},
+        {"name":"Martinique (DOM)","dial":"+596"},{"name":"Mayotte (DOM)","dial":"+262"},
+        {"name":"Réunion (DOM)","dial":"+262"},{"name":"Belgique","dial":"+32"},
+        {"name":"France","dial":"+33"},{"name":"Suisse","dial":"+41"}
+    ].sort((a, b) => a.name.localeCompare(b.name, 'fr', { sensitivity: 'base' }));
+
+    function updateDialPreview() {
+        const countrySelect = document.getElementById('country');
+        const dialPreview = document.getElementById('dialPreview');
+        if (!countrySelect || !dialPreview) return;
+        const opt = countrySelect.options[countrySelect.selectedIndex];
+        dialPreview.textContent = opt ? `Indicatif sélectionné : ${opt.dataset.dial}` : '';
+    }
+
+    function initForm() {
+        const countrySelect = document.getElementById('country');
+        if (countrySelect) {
+            countrySelect.innerHTML = countries.map(c => `<option value="${c.name}" data-dial="${c.dial}">${c.name} (${c.dial})</option>`).join('');
+            const defIdx = countries.findIndex(c => c.name.includes("Côte d'Ivoire"));
+            countrySelect.selectedIndex = defIdx >= 0 ? defIdx : 0;
+            updateDialPreview();
+            countrySelect.addEventListener('change', updateDialPreview);
+        }
+
+        document.querySelectorAll('.eye-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const id = btn.getAttribute('data-target');
+                const input = document.getElementById(id);
+                if (input) input.type = (input.type === 'password' ? 'text' : 'password');
+            });
+        });
+
+        const form = document.getElementById('leadForm');
+        const note = document.getElementById('note');
+
+        form?.addEventListener('submit', async (e) => {
+            e.preventDefault(); note.textContent = '';
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const dial = countrySelect.options[countrySelect.selectedIndex]?.dataset.dial || '';
+            const phoneRaw = document.getElementById('phone').value.trim().replace(/[^\d]/g, '');
+            const p1 = document.getElementById('pwd').value;
+            const p2 = document.getElementById('pwd2').value;
+
+            if (!fullName || !/^\S+@\S+\.\S+$/.test(email) || !phoneRaw) {
+                note.style.color = 'var(--err)'; note.textContent = 'Merci de vérifier les champs obligatoires.'; return;
+            }
+            if (p1.length < 8) { note.style.color = 'var(--err)'; note.textContent = 'Le mot de passe doit contenir au moins 8 caractères.'; return; }
+            if (p1 !== p2) { note.style.color = 'var(--err)'; note.textContent = 'Les mots de passe ne correspondent pas.'; return; }
+            if (emailAlreadyUsed(email)) { document.getElementById('modalDuplicate').classList.add('show'); return; }
+
+            const phoneE164 = `${dial}${phoneRaw.startsWith('0') ? phoneRaw.slice(1) : phoneRaw}`;
+            try {
+                const payload = {
+                    type: "inscription", nom_complet: fullName, email: email,
+                    pays: countrySelect.value, telephone: phoneE164, mot_de_passe: p1,
+                    date_inscription: new Date().toISOString(), source: "mynina.tv",
+                    utm_source: sessionStorage.getItem('utm_source') || '',
+                    utm_medium: sessionStorage.getItem('utm_medium') || '',
+                    utm_campaign: sessionStorage.getItem('utm_campaign') || ''
+                };
+                const res = await fetch('https://mynina-signup-webhook.marketing-03f.workers.dev', {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+                });
+                if (!res.ok) {
+                    if (res.status === 409 || res.status === 400) { document.getElementById('modalDuplicate').classList.add('show'); return; }
+                    throw new Error('HTTP ' + res.status);
+                }
+                const textResponse = await res.text();
+                if (textResponse.toLowerCase().includes("exist")) { document.getElementById('modalDuplicate').classList.add('show'); return; }
+                rememberEmail(email);
+                const msg = document.getElementById('modalMessage');
+                msg.innerHTML = `Félicitations, <strong>${fullName.replace(/[<>&]/g, '')}</strong> !<br/>Votre compte a été créé avec succès.`;
+                document.getElementById('modalSuccess').classList.add('show');
+                form.reset(); updateDialPreview();
+            } catch (err) {
+                note.style.color = 'var(--err)';
+                note.textContent = 'Une erreur est survenue. Réessayez dans un instant.';
+            }
+        });
+    }
+
+    function emailAlreadyUsed(email) { const list = JSON.parse(localStorage.getItem('mynina_emails') || '[]'); return list.includes(email.toLowerCase()); }
+    function rememberEmail(email) { const list = JSON.parse(localStorage.getItem('mynina_emails') || '[]'); if (!list.includes(email.toLowerCase())) { list.push(email.toLowerCase()); localStorage.setItem('mynina_emails', JSON.stringify(list)); } }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.reveal').forEach(n => io.observe(n));
+        buildCarousel();
+        initForm();
+
+        document.querySelectorAll('.modal-backdrop')?.forEach(m => m.addEventListener('click', e => { if (e.target === m) m.classList.remove('show'); }));
+        document.querySelectorAll('.close')?.forEach(b => b.addEventListener('click', () => { b.closest('.modal-backdrop')?.classList.remove('show'); }));
+
+        document.getElementById('chatBtn')?.addEventListener('click', function () {
+            if (window.Tawk_API) { if (Tawk_API.showWidget) Tawk_API.showWidget(); if (Tawk_API.maximize) Tawk_API.maximize(); }
+        });
+
+        const params = new URLSearchParams(window.location.search);
+        ['utm_source', 'utm_medium', 'utm_campaign'].forEach(key => {
+            const val = params.get(key); if (val) sessionStorage.setItem(key, val);
+        });
+    });
+    </script>
+
+</body>
+</html>
