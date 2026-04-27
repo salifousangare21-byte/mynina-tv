@@ -162,7 +162,7 @@ function initLeadForms() {
 
       // Récupérer valeur Safaricom
       const safaricomField = form.querySelector("[name='safaricom_customer']");
-      const safaricomValue = safaricomField ? safaricomField.value : "Not specified";
+      const safaricomValue = (safaricomField && safaricomField.value) ? safaricomField.value : "Not specified";
 
       const payload = {
         type: "mynina_baze_lead",
