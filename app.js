@@ -344,5 +344,3 @@ document.addEventListener("DOMContentLoaded", () => {
     loadYouTubeAPI();
   }
 });
-/ /   v 2  
- 
