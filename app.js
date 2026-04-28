@@ -59,6 +59,16 @@ async function postLead(payload) {
   if (!response.ok) throw new Error(`Webhook error ${response.status}`);
 }
 
+// ── Afficher erreur formulaire ──
+function showFormError(status, message) {
+  if (status) {
+    status.innerHTML = "⚠️ " + message;
+    status.style.color = "#ff165d";
+    status.style.fontSize = "0.9rem";
+    status.style.marginTop = "10px";
+  }
+}
+
 // ── Modale doublon ──
 function showDuplicateModal(bazeUrl) {
   const existing = document.getElementById("mynina-duplicate-modal");
@@ -153,6 +163,30 @@ function initLeadForms() {
       }
 
       const email = form.querySelector("[name='email']")?.value.trim() || "";
+      const phoneRaw = form.querySelector("[name='phone']")?.value.trim() || "";
+      const phoneClean = phoneRaw.replace(/\s/g, "");
+
+      // ── Validation email ──
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      if (!emailRegex.test(email)) {
+        showFormError(status, "Please enter a valid email address (e.g. name@gmail.com).");
+        return;
+      }
+
+      // ── Validation téléphone Kenya (9 chiffres, commence par 7) ──
+      const phoneRegex = /^7\d{8}$/;
+      if (!phoneRegex.test(phoneClean)) {
+        showFormError(status, "Please enter a valid Kenyan number: 9 digits starting with 7 (e.g. 712345678).");
+        return;
+      }
+
+      // ── Validation Safaricom obligatoire ──
+      const safaricomField = form.querySelector("[name='safaricom_customer']");
+      const safaricomValue = safaricomField ? safaricomField.value : "Not specified";
+      if (safaricomValue === "Not specified") {
+        showFormError(status, "Please select whether you are a Safaricom customer.");
+        return;
+      }
 
       // ── Vérification doublon email ──
       if (emailAlreadyUsed(email)) {
@@ -160,17 +194,13 @@ function initLeadForms() {
         return;
       }
 
-      // Récupérer valeur Safaricom
-      const safaricomField = form.querySelector("[name='safaricom_customer']");
-      const safaricomValue = (safaricomField && safaricomField.value) ? safaricomField.value : "Not specified";
-
       const payload = {
         type: "mynina_baze_lead",
         campaign: form.dataset.campaign || "mynina-kenya-campaign",
         source: form.dataset.source || "mynina-kenya-page",
         series: form.querySelector("[name='series']")?.value || form.dataset.series || "MyNina on Baze",
         full_name: form.querySelector("[name='full_name']")?.value.trim() || "",
-        phone: form.querySelector("[name='phone']")?.value.trim() || "",
+        phone: "+254" + phoneClean,
         email: email,
         safaricom_customer: safaricomValue,
         ...getTrackingData()
