@@ -223,6 +223,15 @@ function initLeadForms() {
 
       try {
         await postLead(payload);
+        // ── Push GA4 uniquement après confirmation webhook Make.com ──
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "lead_baze_confirmed",
+          lead_email: email,
+          lead_series: payload.series,
+          lead_source: payload.source,
+          lead_campaign: payload.campaign
+        });
       } catch (error) {
         console.error("Lead webhook error:", error);
       } finally {
@@ -374,7 +383,3 @@ document.addEventListener("DOMContentLoaded", () => {
     loadYouTubeAPI();
   }
 });
-
-
-
-
