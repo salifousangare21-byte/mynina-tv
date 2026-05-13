@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W4LMJS5');</script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compte créé avec succès | MyNina</title>
+  <link rel="icon" type="image/png" href="./assets/Icone MyNina.png">
+  <link rel="apple-touch-icon" href="./assets/Icone MyNina.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #1e0c21;
+      --card: #2d1535;
+      --pink: #FF165D;
+      --rose-light: #FF5C8D;
+      --rose-dim: rgba(255,22,93,0.12);
+      --text: #FFFFFF;
+      --muted: #c9b8d4;
+      --border: rgba(255,255,255,0.1);
+      --stroke: #2A1D30;
+      --ok: #2dd4bf;
+      --ok-dim: rgba(45,212,191,0.12);
+      --font-title: 'Playfair Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* ── BACKGROUND PARTICLES ── */
+    .bg-glow {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .bg-glow::before {
+      content: '';
+      position: absolute;
+      top: -200px; left: 50%;
+      transform: translateX(-50%);
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(255,22,93,0.08) 0%, transparent 70%);
+      animation: pulse 6s ease-in-out infinite alternate;
+    }
+    .bg-glow::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(84,43,94,0.2) 0%, transparent 70%);
+      animation: pulse 8s ease-in-out infinite alternate-reverse;
+    }
+    @keyframes pulse { from { transform: translateX(-50%) scale(1); } to { transform: translateX(-50%) scale(1.15); } }
+
+    /* ── NAV ── */
+    .nav {
+      position: relative; z-index: 10;
+      backdrop-filter: blur(8px);
+      background: rgba(30,12,33,0.88);
+      border-bottom: 1px solid rgba(255,22,93,0.12);
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-logo { height: 22px; mix-blend-mode: screen; filter: brightness(1.1); }
+
+    /* ── MAIN ── */
+    main {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+    }
+
+    /* ── SUCCESS BADGE ── */
+    .success-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px; height: 80px;
+      background: var(--ok-dim);
+      border: 2px solid var(--ok);
+      border-radius: 50%;
+      margin-bottom: 24px;
+      animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+    .success-badge svg { color: var(--ok); }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.5); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* ── HEADER TEXT ── */
+    .success-header {
+      text-align: center;
+      max-width: 560px;
+      margin-bottom: 56px;
+      animation: fadeUp 0.7s 0.2s both;
+    }
+    .success-header h1 {
+      font-family: var(--font-title);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .success-header h1 em { font-style: italic; color: var(--pink); }
+    .success-header p { color: var(--muted); font-size: 1rem; line-height: 1.7; }
+    .accent { color: var(--pink); }
+
+    /* ── STEPPER ── */
+    .stepper-wrap {
+      width: 100%;
+      max-width: 700px;
+      margin-bottom: 56px;
+      animation: fadeUp 0.7s 0.35s both;
+    }
+    .stepper {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      position: relative;
+    }
+
+    /* Ligne de connexion entre étapes */
+    .step-connector {
+      flex: 1;
+      height: 2px;
+      margin-top: 28px;
+      background: var(--stroke);
+      position: relative;
+      overflow: hidden;
+    }
+    .step-connector.done::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--ok);
+      animation: fillLine 0.8s ease forwards;
+    }
+    .step-connector.active::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--ok), var(--pink));
+      width: 50%;
+      animation: fillHalf 0.8s ease forwards;
+    }
+    @keyframes fillLine { from { width: 0; } to { width: 100%; } }
+    @keyframes fillHalf { from { width: 0; } to { width: 60%; } }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+      width: 120px;
+    }
+    .step-circle {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1rem;
+      border: 2px solid var(--stroke);
+      background: var(--card);
+      color: var(--muted);
+      position: relative;
+      transition: all 0.4s ease;
+    }
+    .step.done .step-circle {
+      border-color: var(--ok);
+      background: var(--ok-dim);
+      color: var(--ok);
+    }
+    .step.active .step-circle {
+      border-color: var(--pink);
+      background: var(--rose-dim);
+      color: var(--pink);
+      box-shadow: 0 0 0 4px rgba(255,22,93,0.15);
+      animation: ringPulse 2s ease infinite;
+    }
+    @keyframes ringPulse {
+      0%, 100% { box-shadow: 0 0 0 4px rgba(255,22,93,0.15); }
+      50% { box-shadow: 0 0 0 8px rgba(255,22,93,0.05); }
+    }
+    .step-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.3;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+    .step.done .step-label { color: var(--ok); }
+    .step.active .step-label { color: var(--text); }
+
+    /* ── CARDS ── */
+    .cards-wrap {
+      width: 100%;
+      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      animation: fadeUp 0.7s 0.5s both;
+    }
+
+    /* Card connexion */
+    .card-info {
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: 16px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .card-info-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: var(--ok-dim);
+      border: 1px solid rgba(45,212,191,0.2);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .card-info-text { flex: 1; }
+    .card-info-text strong { font-size: 0.95rem; font-weight: 700; display: block; margin-bottom: 4px; }
+    .card-info-text span { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+
+    /* Card téléchargement */
+    .card-download {
+      background: linear-gradient(135deg, rgba(255,22,93,0.08) 0%, rgba(84,43,94,0.15) 100%);
+      border: 1px solid rgba(255,22,93,0.25);
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .card-download h2 {
+      font-family: var(--font-title);
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .card-download p { color: var(--muted); font-size: 0.9rem; margin-bottom: 28px; line-height: 1.6; }
+    .download-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-store {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-store:hover { transform: translateY(-2px); }
+    .btn-store.ios {
+      background: #fff;
+      color: #000;
+      box-shadow: 0 4px 20px rgba(255,255,255,0.15);
+    }
+    .btn-store.ios:hover { box-shadow: 0 8px 32px rgba(255,255,255,0.25); }
+    .btn-store.android {
+      background: var(--pink);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(255,22,93,0.3);
+    }
+    .btn-store.android:hover { box-shadow: 0 8px 32px rgba(255,22,93,0.5); }
+    .btn-store svg { flex-shrink: 0; }
+    .btn-store-text { text-align: left; line-height: 1.2; }
+    .btn-store-text small { display: block; font-weight: 400; font-size: 0.72rem; opacity: 0.7; }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative; z-index: 1;
+      text-align: center;
+      padding: 24px 20px;
+      border-top: 1px solid var(--stroke);
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 600px) {
+      .nav { padding: 14px 20px; }
+      .stepper { gap: 0; }
+      .step { width: 80px; }
+      .step-label { font-size: 0.7rem; }
+      .step-circle { width: 44px; height: 44px; font-size: 0.85rem; }
+      .step-connector { margin-top: 22px; }
+      .card-info { flex-direction: column; text-align: center; }
+      .download-btns { flex-direction: column; align-items: center; }
+      .btn-store { width: 100%; max-width: 280px; justify-content: center; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4LMJS5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="bg-glow"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <img src="./assets/logo-mynina-white.png" alt="MyNina" class="nav-logo">
+  </nav>
+
+  <main>
+
+    <!-- Badge succès -->
+    <div class="success-badge">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+
+    <!-- Header -->
+    <div class="success-header">
+      <h1>Votre compte <em>MyNina</em> est créé !</h1>
+      <p>Félicitations ! Plus qu'une étape pour profiter de vos <span class="accent">7 jours gratuits</span> : téléchargez l'application et connectez-vous avec les identifiants que vous venez de créer.</p>
+    </div>
+
+    <!-- Stepper -->
+    <div class="stepper-wrap">
+      <div class="stepper">
+
+        <!-- Étape 1 — Compte créé (done) -->
+        <div class="step done">
+          <div class="step-circle">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="step-label">Compte<br>créé</div>
+        </div>
+
+        <div class="step-connector done"></div>
+
+        <!-- Étape 2 — Télécharger l'app (active) -->
+        <div class="step active">
+          <div class="step-circle">2</div>
+          <div class="step-label">Télécharger<br>l'app</div>
+        </div>
+
+        <div class="step-connector active"></div>
+
+        <!-- Étape 3 — Se connecter -->
+        <div class="step">
+          <div class="step-circle">3</div>
+          <div class="step-label">Se connecter<br>à l'app</div>
+        </div>
+
+        <div class="step-connector"></div>
+
+        <!-- Étape 4 — Profiter -->
+        <div class="step">
+          <div class="step-circle">4</div>
+          <div class="step-label">Profiter<br>gratuitement</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards-wrap">
+
+      <!-- Info connexion -->
+      <div class="card-info">
+        <div class="card-info-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <div class="card-info-text">
+          <strong>Connectez-vous avec vos identifiants</strong>
+          <span>Dans l'application, utilisez l'adresse e-mail et le mot de passe que vous venez de créer sur cette page pour vous connecter.</span>
+        </div>
+      </div>
+
+      <!-- Téléchargement -->
+      <div class="card-download">
+        <h2>Téléchargez <em style="font-style:italic;color:var(--pink)">l'application</em> MyNina</h2>
+        <p>Disponible gratuitement sur iOS et Android. Connectez-vous avec vos identifiants pour activer vos <span class="accent">7 jours gratuits</span> et commencer à regarder Marimar.</p>
+        <div class="download-btns">
+          <a href="https://apps.apple.com" target="_blank" class="btn-store ios">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <div class="btn-store-text">
+              <small>Télécharger sur</small>
+              App Store
+            </div>
+          </a>
+          <a href="https://play.google.com" target="_blank" class="btn-store android">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.22.99.14l12.2-7.05-2.54-2.54-10.65 9.45zM.94 1.09C.36 1.7.02 2.6.02 3.78v16.44c0 1.18.34 2.08.92 2.69l.13.12 9.21-9.21v-.22L1.06.97l-.12.12zM20.67 10.08l-2.62-1.51-2.84 2.84 2.84 2.84 2.64-1.52c.75-.43.75-1.14-.02-1.65zM3.18.24L15.38 7.3 12.84 9.83 2.19.38l.99-.14z"/></svg>
+            <div class="btn-store-text">
+              <small>Disponible sur</small>
+              Google Play
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    MyNina · Streaming télénovelas & dramas en français
+  </footer>
+
+  <script>
+    // Animer les connecteurs avec délai
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.querySelectorAll('.step-connector').forEach((el, i) => {
+          el.style.transitionDelay = `${i * 0.3}s`;
+        });
+      }, 300);
+    });
+
+    // Récupérer le prénom depuis l'URL si passé en paramètre
+    const params = new URLSearchParams(window.location.search);
+    const prenom = params.get('prenom') || params.get('nom');
+    if (prenom) {
+      const h1 = document.querySelector('.success-header h1');
+      if (h1) h1.innerHTML = `Bienvenue <em>${prenom.replace(/[<>&]/g,'')} !</em><br>Votre compte MyNina est créé`;
+    }
+  </script>
+</body>
+</html>
